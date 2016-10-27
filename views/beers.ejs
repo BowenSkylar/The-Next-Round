@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+
+
+
+<button><a href="/">GO BACK</a></button>
+<hr>
+
+
+
+<%beers.forEach((beer) => {%>
+  Name of Beer: <%=beer.name%> <br>
+   Beer Description: <%=beer.description%> <br>
+   ABV:  <%=beer.abv%> <br>
+    Is Beer Organic?: <%=beer.isOrganic%> <br>
+     Food Parings: <%=beer.foodPairings%> <br>
+
+     Image: <img src="<%=beer.labels.medium%>" alt="no image found of beer">
+
+     <hr>
+<%})%>
+</body>
+</html>

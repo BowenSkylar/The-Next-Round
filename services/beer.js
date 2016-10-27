@@ -1,14 +1,16 @@
 const fetch = require('node-fetch');
 const API_URL = 'http://api.brewerydb.com/v2/'; //  API_URL version two
+const API_KEY = process.env.API_KEY;
 
 //  function to get beer name
 
 function getBeerByName(req, res, next) {
-  console.log(req.body);
-  fetch(`${API_URL}key=${req.body.searchKey}`)
+  console.log(req.query);
+  fetch(`${API_URL}beers?name=${req.query.searchTerm}&key=${API_KEY}`)
   .then(r => r.json())
-  .then((data) => {
-    res.results = data.results;
+  .then((beers) => {
+    console.log(beers.data);
+    res.results = beers.data;
     next();
   })
 .catch((err) => {
@@ -17,6 +19,5 @@ function getBeerByName(req, res, next) {
 });
 }
 
-
 //  module.exports ={function name here};
-module.exports = {getBeerByName};
+module.exports = { getBeerByName };

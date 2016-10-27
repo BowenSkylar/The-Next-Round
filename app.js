@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const logger = require('morgan');
-const { findArtist } = require('./services/beer');
+const { getBeerByName } = require('./services/beer');
 
 
 const app = express();
@@ -17,8 +17,17 @@ app.set('views', './views');
 app.use(express.static('public'));
 
 
+
+
+
+app.get('/results', getBeerByName, (req, res) => {
+  res.render('beers', {
+    beers: res.results,
+  });
+});
+
 app.get('/', (req, res) => {
   res.render('index', {
-    heading: 'Hello Skylar!!',
+    heading: 'Search Beer Database',
   });
 });

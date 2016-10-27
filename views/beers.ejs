@@ -16,15 +16,23 @@
 
 
 <%beers.forEach((beer) => {%>
-  Name of Beer: <%=beer.name%> <br>
-   Beer Description: <%=beer.description%> <br>
-   ABV:  <%=beer.abv%> <br>
-    Is Beer Organic?: <%=beer.isOrganic%> <br>
-     Food Parings: <%=beer.foodPairings%> <br>
+  Name of Beer: <%=beer.name%>
+  <br> <br>
+  Beer Description: <%=beer.description%>
+  <br> <br>
+  Alcohol By Volume:  <%=beer.abv%>
+  <br> <br>
+  Is Beer Organic?: <%=beer.isOrganic%>
+  <br> <br>
+  Food Parings: <%=beer.foodPairings%>
+  <br> <br>
 
-     Image: <img src="<%=beer.labels.medium%>" alt="no image found of beer">
-
-     <hr>
+    <% if (beer.labels) { %>
+        <img src=" <%= beer.labels.medium %> " alt="">
+    <% } else {%>
+        <img src="" alt="no image found">
+    <%}%>
+  <hr>
 <%})%>
 </body>
 </html>

@@ -13,26 +13,35 @@
 <button><a href="/">GO BACK</a></button>
 <hr>
 
-
-
 <%beers.forEach((beer) => {%>
   Name of Beer: <%=beer.name%>
-  <br> <br>
+    <br> <br>
   Beer Description: <%=beer.description%>
-  <br> <br>
+    <br> <br>
   Alcohol By Volume:  <%=beer.abv%>
-  <br> <br>
+    <br> <br>
   Is Beer Organic?: <%=beer.isOrganic%>
-  <br> <br>
+    <br> <br>
   Food Parings: <%=beer.foodPairings%>
-  <br> <br>
+    <br> <br>
+  Style: <%=beer.style.name%>
+    <br> <br>
 
     <% if (beer.labels) { %>
         <img src=" <%= beer.labels.medium %> " alt="">
     <% } else {%>
         <img src="" alt="no image found">
     <%}%>
+
+    <form class="save" action="/favorites" method="POST">
+  <input type="submit" name="name" value="Add to Tab!">
+
+</form>
   <hr>
+
+
+
+
 <%})%>
 </body>
 </html>

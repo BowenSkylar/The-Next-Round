@@ -14,9 +14,9 @@
 <hr>
 
 <%beers.forEach((beer) => {%>
-  Name of Beer: <%=beer.name%>
+  Beer Description: <%=beer.name%>
     <br> <br>
-  Beer Description: <%=beer.description%>
+  Name: <%=beer.description%>
     <br> <br>
   Alcohol By Volume:  <%=beer.abv%>
     <br> <br>
@@ -26,6 +26,10 @@
     <br> <br>
   Style: <%=beer.style.name%>
     <br> <br>
+
+
+
+
 
     <% if (beer.labels) { %>
         <img src=" <%= beer.labels.medium %> " alt="">

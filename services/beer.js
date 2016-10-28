@@ -6,12 +6,14 @@ const API_KEY = process.env.API_KEY;
 
 function getBeerByName(req, res, next) {
   console.log(req.query);
-
   fetch(`${API_URL}beers?name=${req.query.searchTerm}&key=${API_KEY}`)
   .then(r => r.json())
   .then((beers) => {
     console.log(beers.data);
+    console.log(req.query.searchTerm+"*************");
     res.results = beers.data;
+        let searchInput = req.query.searchTerm;
+
     next();
   })
 .catch((err) => {

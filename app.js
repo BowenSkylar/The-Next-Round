@@ -29,7 +29,7 @@ app.listen(port, () => console.log('Well you didnt break it since its running on
 
 
 app.use('/', indexRoute);
-app.use('/favorites', favoritesRoute);
+app.use('/', favoritesRoute);
 
 app.get('/results', getBeerByName, (req, res) => {
   res.render('beers', {

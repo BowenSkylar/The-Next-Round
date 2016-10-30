@@ -12,8 +12,6 @@ function getBeerByName(req, res, next) {
     console.log(beers.data);
     console.log(req.query.searchTerm+"*************");
     res.results = beers.data;
-        let searchInput = req.query.searchTerm;
-
     next();
   })
 .catch((err) => {

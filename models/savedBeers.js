@@ -12,7 +12,6 @@ function getBeers(req, res, next) {
      .find({})
       .toArray((arrayError, data) => {
         if (arrayError) return next(arrayError);
-
         // return the data
         res.favorites = data;
         db.close();
@@ -42,7 +41,6 @@ function savedBeers(req, res, next) {
 function deleteBeers(req, res, next) {
   MongoClient.connect(dbConnection, (err, db) => {
     if (err) return next(err);
-
     db.collection('mytab')
       .findAndRemove({ _id: ObjectID(req.params.id) }, (removeErr, doc) => {
         if (removeErr) return next(removeErr);

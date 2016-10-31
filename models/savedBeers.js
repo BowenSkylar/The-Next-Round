@@ -1,19 +1,20 @@
 const { MongoClient } = require('mongodb');
 const { ObjectID } = require('mongodb');
-const bcrypt = require('bcryptjs');
+// const bcrypt = require('bcryptjs');
 
 const dbConnection = 'mongodb://localhost:27017/favoriteBeers'; // db name
 
-
+// show me all the saved beers in DB
 function getBeers(req, res, next) {
   MongoClient.connect(dbConnection, (err, db) => {
     if (err) return next(err);
     db.collection('mytab')
+    // empty find shows all contents
      .find({})
       .toArray((arrayError, data) => {
         if (arrayError) return next(arrayError);
-        // return the data
-        res.favorites = data;
+        // return the data inside of the res.favorites OBJ
+        res.results = data;             // <- no es beer
         db.close();
         return next();
       });
@@ -22,11 +23,12 @@ function getBeers(req, res, next) {
   return false;
 }
 
+// INSERT new favorite beer into DB
 function savedBeers(req, res, next) {
   MongoClient.connect(dbConnection, (err, db) => {
     if (err) return next(err);
     db.collection('mytab')
-    .insert(req.body.favorite, (insertErr, result) => {
+    .insert(req.body.mytab, (insertErr, result) => {
       if (insertErr) return next(insertErr);
       res.saved = result;
       db.close();

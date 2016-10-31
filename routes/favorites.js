@@ -1,11 +1,10 @@
 const router = require('express').Router();
-const { getBeers } = require('../models/savedBeers');
+const { savedBeers } = require('../models/savedBeers');
 
-
-router.post('/favorites', getBeers, (req, res) => {
-  // res.redirect('/favorites');
-  res.render('favorites', {
+router.post('/', savedBeers, (req, res) => {
+  res.json('favorites', {
     header: '-WELCOME TO YOUR TAB-',
+    beers: res.saved || [],
   });
 });
 

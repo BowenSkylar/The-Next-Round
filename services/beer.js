@@ -10,8 +10,8 @@ function getBeerByName(req, res, next) {
   .then(r => r.json())
   .then((beers) => {
     console.log(beers.data);
-    console.log(req.query.searchTerm+"*************");
-    res.results = beers.data;
+    // console.log(req.query.searchTerm +'*************');
+    res.dabeer = beers.data;
     next();
   })
 .catch((err) => {

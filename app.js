@@ -1,9 +1,13 @@
+/* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
+/* eslint no-param-reassign: ["error", { "props": false }] */
+
+
 require('dotenv').config();
-const express = require('express');
-const logger = require('morgan');
-const path = require('path');
-const bodyParser = require('body-parser');
-const methodOverride = require('method-override');
+const express                 = require('express');
+const logger                  = require('morgan');
+const path                    = require('path');
+const bodyParser              = require('body-parser');
+const methodOverride          = require('method-override');
 const router = require('express').Router();
 const cookieParser = require('cookie-parser');
 const session = require('express-session');

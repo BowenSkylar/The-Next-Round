@@ -20,7 +20,10 @@ pondering the thought of what are all of these beers? IPA's? Craft Beers? Ciders
 
 brewerydb.com
 
-## WireFrame Planning
+## WireFrame
 
-http://imgur.com/e8e2iQb
+#Search Page
 http://imgur.com/KOXUAEu
+
+#Log-In Page
+http://imgur.com/e8e2iQb

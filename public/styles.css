@@ -1,11 +1,44 @@
 body{
-  background-color: lightblue;
+  background-color: peru;
 }
-
 .search{
   font-size: 2em;
 }
-
 .button{
   font-size: 2em;
 }
+.header{
+  font-size: 4em;
+  text-align: center;
+  font-family: 'Lucida Console';
+}
+.beerImage {
+  border: 6px solid black;
+}
+.container{
+  margin-left: 150px;
+  margin-right: 150px;
+  font-size: 1em;
+  font-family: helvetica;
+}
+.searchForm{
+  text-align: center;
+}
+.searchBeer, .searchButton{
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+span{
+  font-weight: bolder;
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+
+li{
+  list-style: none;
+}
+
+#details{
+  width: 50vw;
+}
+

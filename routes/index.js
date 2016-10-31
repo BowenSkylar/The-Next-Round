@@ -6,7 +6,7 @@ const { getBeerByName } = require('../services/beer');
 router.get('/', getBeerByName, getBeers, (req, res) => {
   // res.json(res.dabeer);
   res.render('index', {
-    heading: 'Search Beer Database',
+    heading: 'The Next Round',
     beers: res.dabeer,
   });
 });

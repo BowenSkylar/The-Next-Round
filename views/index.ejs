@@ -7,46 +7,47 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div>
+<div class="container">
 <h1 class="header"><%= heading %></h1>
-  <div>
+  <div class="searchDiv">
     <form class="searchForm" action="/" method="GET">
       <input class="searchBeer" type="text" name="searchTerm" placeholder="Search Beer by Name">
+      <br>
       <input class ="searchButton" type="submit" value="Search">
     </form>
-  </div>
-</div>
+  </div> <!-- search div end -->
 
 <hr>
-
+<div id="details">
 <%beers.forEach((beer) => { %>
-  <li> Beer Description: <%=beer.name%></li>
-  <li> Name: <%=beer.description%></li>
-  <li> Alcohol By Volume:  <%=beer.abv%></li>
-  <li> Is Beer Organic?: <%=beer.isOrganic%></li>
-  <li> Food Parings: <%=beer.foodPairings%></li>
-    <br> <br>
-    <% if (beer.labels) { %>
-        <img src=" <%= beer.labels.medium %> " alt="">
-    <% } else {%>
-        <img src="" alt="no image found">
+  <ul class="beerDetails">
 
+  <li class="des"> <span>Beer Description:</span>   <br><br><%=beer.name%></li><br>
+  <li class="name"> <span>Name:</span> <br><br> <%=beer.description%></li><br>
+  <li class="abv"> <span>Alcohol By Volume:</span> <br><br>  <%=beer.abv%></li><br>
+  <li class="org"> <span>Is Beer Organic?:</span>  <br><br><%=beer.isOrganic%></li><br>
+  <li class="pairings"> <span>Food Parings:</span> <br><br> <%=beer.foodPairings%></li><br>
+    <br>
+    </div>
+    <% if (beer.labels) { %>
+        <img class = "beerImage" src=" <%= beer.labels.medium %> " alt="">
+    <% } else {%>
+        <img class = "beerImage" src="" alt="no image found">
+</ul>
     <%}%>
 
-    <form class="save" action="/favorites" method="POST">
-  <input type="submit" name="name" value="Add to Tab!">
+    <form  action="/favorites" method="POST">
+  <input class="save" type="submit" name="name" value="Add to Tab!">
 </form>
   <hr>
     <%})%>
 
-<hr>
-
-<div>
   <form class="searchForm" action="/" method="GET">
     <input class="searchBeer" type="text" name="searchTerm" placeholder="Search Beer by Name">
+    <br>
     <input class ="searchButton" type="submit" value="Search">
   </form>
-</div>
+</div> <!-- container div end -->
 
 </body>
 </html>

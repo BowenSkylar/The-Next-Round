@@ -1,0 +1,59 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: url('/img/home.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 25vh;
+}
+
+header{
+   text-shadow: 1px 1px 1px #000;
+}
+
+ h1{
+  font-size: 60px;
+  letter-spacing: 5px;
+
+/*  text-shadow: */
+}
+
+h2{
+  letter-spacing: 2px;
+}
+/*shout out to matt paz */
+nav > a{
+  text-decoration: none;
+  color: #fff;
+  margin: 8px;
+  font-size: 24px;
+}
+a{
+  text-decoration: none;
+  color: #FFF;
+}
+a:hover{
+  color: ;
+}
+
+
+
+button{
+  border: none;
+  border-radius: 8px;
+  background-color: #000;
+  opacity: 0.7;
+  color: #fff;
+  padding: 16px;
+  font-size: 18px;
+  margin: 18px;
+  letter-spacing: 4px;
+}
+
+button:hover{
+  background-color: blue;
+}
+
+

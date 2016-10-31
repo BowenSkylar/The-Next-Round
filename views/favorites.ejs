@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
-<h1><%= header %></h1>
-
+<h1><%= user.username %>, <%= header %></h1>
+<h4> Your saved beers show here </h4>
+<% fav.forEach ((ff) =>{ %>
+    <%= ff.beerName %>
+<%})%>
 </body>
 </html>

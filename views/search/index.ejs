@@ -4,13 +4,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>The Next Round</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+
+
 <div class="container">
 <h1 class="header"><%= heading %></h1>
+<h2><center><a href="/favorites">MY FAVORITES</a></center></h2>
+
   <div class="searchDiv">
-    <form class="searchForm" action="/" method="GET">
+    <form class="searchForm" action="/search" method="GET">
       <input class="searchBeer" type="text" name="searchTerm" placeholder="Search Beer by Name">
       <br>
       <input class ="searchButton" type="submit" value="Search">
@@ -30,23 +35,19 @@
     <br>
     </div>
     <% if (beer.labels) { %>
-        <img class = "beerImage" src=" <%= beer.labels.medium %> " alt="">
+        <img class = "beerImage" src=" <%= beer.labels.medium %> " alt="no image found">
     <% } else {%>
         <img class = "beerImage" src="" alt="no image found">
-</ul>
     <%}%>
 
     <form  action="/favorites" method="POST">
+    <input type="hidden" name="beerName" value="<%= beer.name%>">
   <input class="save" type="submit" name="name" value="Add to Tab!">
 </form>
   <hr>
     <%})%>
+</ul>
 
-  <form class="searchForm" action="/" method="GET">
-    <input class="searchBeer" type="text" name="searchTerm" placeholder="Search Beer by Name">
-    <br>
-    <input class ="searchButton" type="submit" value="Search">
-  </form>
 </div> <!-- container div end -->
 
 </body>

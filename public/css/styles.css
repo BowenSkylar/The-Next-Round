@@ -1,5 +1,5 @@
 body{
-  background-color: peru;
+  background-color:  #333333;
 }
 .search{
   font-size: 2em;
@@ -20,6 +20,7 @@ body{
   margin-right: 150px;
   font-size: 1em;
   font-family: helvetica;
+  color: snow;
 }
 .searchForm{
   text-align: center;

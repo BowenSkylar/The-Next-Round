@@ -1,5 +1,6 @@
 const { MongoClient } = require('mongodb');
 const { ObjectID } = require('mongodb');
+const { getDB } = require('../lib/dbConnect.js');
 // const bcrypt = require('bcryptjs');
 
 const dbConnection = 'mongodb://localhost:27017/favoriteBeers'; // db name

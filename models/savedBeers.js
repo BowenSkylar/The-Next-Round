@@ -11,7 +11,7 @@ function getBeers(req, res, next) {
     if (err) return next(err);
     db.collection('mytab')
     // empty find shows all contents
-     .find({})
+     .find({ userId: { $eq: req.session.userId } })
       .toArray((arrayError, data) => {
         if (arrayError) return next(arrayError);
         // return the data inside of the res.favorites OBJ

@@ -9,7 +9,7 @@ router.get('/', authenticate, getBeers, (req, res) => {
   res.render('favorites', {
     header: 'Welcome To Your Tab',
     user: res.user,
-    fav: res.results,
+    fav: res.results || [],
   });
 });
 

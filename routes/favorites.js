@@ -20,6 +20,8 @@ router.post('/', authenticate, savedBeers, (req, res) => {
     header: 'Welcome To Your Tab',
     saved: res.saved || [],
     user: res.user,
+    fav: res.results,
+
 
   });
 });

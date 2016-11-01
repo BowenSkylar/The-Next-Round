@@ -1,3 +1,5 @@
+/*shout out to matt paz for styling help on landing page */
+
 body{
   margin: 0;
   padding: 0;
@@ -23,7 +25,6 @@ header{
 h2{
   letter-spacing: 2px;
 }
-/*shout out to matt paz */
 nav > a{
   text-decoration: none;
   color: #fff;

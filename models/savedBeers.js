@@ -3,7 +3,7 @@ const { ObjectID } = require('mongodb');
 const { getDB } = require('../lib/dbConnect.js');
 // const bcrypt = require('bcryptjs');
 
-const dbConnection = 'mongodb://localhost:27017/beer'; // db name
+const dbConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/beer';
 //add process.env connection^^^^
 
 // show me all the saved beers in DB

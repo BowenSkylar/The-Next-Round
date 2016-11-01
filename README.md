@@ -48,5 +48,14 @@ http://imgur.com/e8e2iQb
 - Belgian White Ale
 
 ## Things I would like to improve
-I would love to fix several bugs through this appliation, finish styling as planned, and fix user displays for favorites. Also correctly host project on Heroku. ( fix mongo errors )
+I would love to fix several bugs through this appliation, finish styling as planned, and fix user displays for favorites with delete options working correctly. Also correctly host project on Heroku. ( fix mongo errors )
 
+## Special Thanks
+- Darryl Z
+- Matt P
+- Valeria D
+- Joey P
+- Sang Min Na
+- Bill M
+- Daniel P
+- Iwrin T

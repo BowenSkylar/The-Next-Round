@@ -27,7 +27,7 @@ User will create a username and password saved into a MongoDB, and then log in w
 - [x] Express
 - [x] MongoDB
 
-## WireFrame
+## WireFrame:
 
 #Search Page
 http://imgur.com/KOXUAEu
@@ -46,3 +46,7 @@ http://imgur.com/e8e2iQb
 - Harvest Pumpkin Ale
 - Blueberry
 - Belgian White Ale
+
+## Things I would like to improve
+I would love to fix several bugs through this appliation, finish styling as planned, and fix user displays for favorites. Also correctly host project on Heroku. ( fix mongo errors )
+

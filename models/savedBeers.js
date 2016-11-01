@@ -4,6 +4,7 @@ const { getDB } = require('../lib/dbConnect.js');
 // const bcrypt = require('bcryptjs');
 
 const dbConnection = 'mongodb://localhost:27017/beer'; // db name
+//add process.env connection^^^^
 
 // show me all the saved beers in DB
 function getBeers(req, res, next) {
@@ -11,11 +12,13 @@ function getBeers(req, res, next) {
     if (err) return next(err);
     db.collection('mytab')
     // empty find shows all contents
-     .find({ userId: { $eq: req.session.userId } })
+     .find({userId: {$eq: req.session.userId}})
       .toArray((arrayError, data) => {
+        // console.log('userI*********', req.session.userId)
         if (arrayError) return next(arrayError);
         // return the data inside of the res.favorites OBJ
         res.results = data;             // <- no es beer
+        // console.log('data', res.results);
         db.close();
         return next();
       });
@@ -38,7 +41,7 @@ function savedBeers(req, res, next) {
     db.collection('mytab')
      .insert(insertObj, (insertErr, result) => {
        if (insertErr) return next(insertErr);
-       res.saved = result;
+       res.results = result;
        db.close();
        next();
      });

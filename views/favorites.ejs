@@ -9,9 +9,10 @@
 <body>
 <h1><%= user.username %>, <%= header %></h1>
 <h4> Your saved beers show here </h4>
-<% fav.forEach ((ff) =>{ %>
-    <li><%= ff.beerName %></li>
-<%})%>
+
+<% for (let i = 0; i < fav.length; i++) { %>
+  <p> <%= fav[i].beerName %> </p>
+<% } %>
 
 <h2><a href="/search">Search More Beers</a></h2>
 

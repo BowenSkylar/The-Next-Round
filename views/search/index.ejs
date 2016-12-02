@@ -23,17 +23,24 @@
   </div> <!-- search div end -->
 
 <hr>
-<div class="image_container">
-<div id="details">
+<div class="flex-container">
+  <div class="image_container">
 <%beers.forEach((beer) => { %>
-  <ul class="beerDetails">
+  <ul= class="beerDetails">
 
    <% if (beer.labels) { %>
         <img class = "beerImage" src=" <%= beer.labels.medium %> " alt="no image found">
     <% } else {%>
         <img class = "beerImage" src="" alt="no image found">
     <%}%>
+
+    <form  action="/favorites" method="POST">
+    <input type="hidden" name="beerName" value="<%= beer.name%>">
+  <input class="save" type="submit" name="name" value="Add to Tab!">
+</form>
+
 </div>
+<div id="details">
   <li class="des"> <span>Beer Description:</span>   <br><br><%=beer.name%></li><br>
   <li class="name"> <span>Name:</span> <br><br> <%=beer.description%></li><br>
   <li class="abv"> <span>Alcohol By Volume:</span> <br><br>  <%=beer.abv%></li><br>
@@ -41,15 +48,11 @@
   <li class="pairings"> <span>Food Parings:</span> <br><br> <%=beer.foodPairings%></li><br>
     <br>
     </div>
-    <form  action="/favorites" method="POST">
-    <input type="hidden" name="beerName" value="<%= beer.name%>">
-  <input class="save" type="submit" name="name" value="Add to Tab!">
-</form>
-  <hr>
+
     <%})%>
 </ul>
 
 </div> <!-- container div end -->
-
+</div>
 </body>
 </html>

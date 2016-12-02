@@ -50,20 +50,19 @@ function savedBeers(req, res, next) {
   return false;
 }
 
-// function deleteBeers(req, res, next) {
-//   MongoClient.connect(dbConnection, (err, db) => {
-//     if (err) return next(err);
-//     db.collection('mytab')
-//       .findAndRemove({ _id: ObjectID(req.params.id) }, (removeErr, doc) => {
-//         if (removeErr) return next(removeErr);
-//         // return the data
-//         res.removed = doc;
-//         db.close();
-//         return next();
-//       });
-//     return false;
-//   });
-//   return false;
-// }
 
-module.exports = { getBeers, savedBeers };
+function deleteBeers(req, res, next) {
+ getDB().then((db) => {
+   db.collection('mytab')
+     .findAndRemove({ _id: ObjectID(req.params.id) }, (removeErr, result) => {
+       if (removeErr) return next(removeErr);
+       res.removed = result;
+       db.close();
+       next();
+     });
+   return false;
+ });
+ return false;
+}
+
+module.exports = { getBeers, savedBeers, deleteBeers };

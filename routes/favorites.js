@@ -3,6 +3,7 @@ const router = require('express').Router();
 const { savedBeers } = require('../models/savedBeers');
 const { authenticate } = require('../lib/auth');
 const { getBeers } = require('../models/savedBeers');
+const { deleteBeers} = require('../models/savedBeers');
 
 //  display saved beers
 // savedBeers,
@@ -29,6 +30,11 @@ router.post('/', authenticate, savedBeers, getBeers, (req, res) => {
 
 
   });
+});
+
+//delete function
+router.delete('/:id', deleteBeers, (req, res) => {
+ res.redirect('/')
 });
 
 module.exports = router;

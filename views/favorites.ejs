@@ -12,6 +12,9 @@
 
 <% for (let i = 0; i < fav.length; i++) { %>
   <p> <%= fav[i].beerName %> </p>
+<form action="/favorites/<%= fav._id %>?_method=DELETE" method="post">
+         <input type="submit" value="Delete">
+</form>
 <% } %>
 
 <h2><a href="/search">Search More Beers</a></h2>
